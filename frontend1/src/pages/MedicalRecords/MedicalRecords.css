@@ -1,0 +1,410 @@
+
+
+
+/* ---------- Main Layout ---------- */
+
+.patients-page{
+    display:flex;
+    min-height:100vh;
+    background:#f4f7fb;
+}
+
+
+.patients-content{
+    flex:1;
+    padding:25px;
+}
+
+
+
+/* ---------- Header ---------- */
+
+.patients-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:20px 0;
+
+}
+
+
+.patients-header h2{
+
+    color:#1a1a1a;
+    font-size:24px;
+
+}
+
+
+
+/* ---------- Add Button ---------- */
+
+.add-btn{
+
+    background:#1565C0;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    transition:0.3s;
+
+}
+
+
+.add-btn:hover{
+
+    background:#0d47a1;
+
+}
+
+
+
+/* ---------- Search ---------- */
+
+
+.search-box{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.search-box input{
+
+    width:300px;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:15px;
+    outline:none;
+
+}
+
+
+.search-box input:focus{
+
+    border-color:#1565C0;
+
+}
+
+
+
+
+
+/* ---------- Table ---------- */
+
+
+table{
+
+    width:100%;
+    background:white;
+    border-collapse:collapse;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+
+
+th{
+
+    background:#1565C0;
+    color:white;
+    padding:15px;
+    text-align:left;
+
+}
+
+
+
+td{
+
+    padding:15px;
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+tbody tr:hover{
+
+    background:#f5f9ff;
+
+}
+
+
+
+/* ---------- Action Buttons ---------- */
+
+
+.action-buttons{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+
+}
+
+
+
+.edit-btn{
+
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:14px;
+
+}
+
+
+
+.edit-btn:hover{
+
+    background:#1b5e20;
+
+}
+
+
+
+
+
+.delete-btn{
+
+    background:#d32f2f;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:14px;
+
+}
+
+
+
+.delete-btn:hover{
+
+    background:#b71c1c;
+
+}
+
+
+
+
+
+/* ---------- Status Badge (Future Use) ---------- */
+
+
+.status{
+
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+
+}
+
+
+
+/* ---------- Modal Background ---------- */
+
+
+.modal{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+
+}
+
+
+
+
+
+/* ---------- Modal Box ---------- */
+
+
+.modal-content{
+
+    background:white;
+    padding:30px;
+    width:400px;
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    animation:popup .3s ease;
+
+}
+
+
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.8);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+.modal-content h2{
+
+    margin-bottom:10px;
+    color:#1565C0;
+
+}
+
+
+
+
+.modal-content input,
+.modal-content select{
+
+
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+    outline:none;
+
+}
+
+
+
+.modal-content input:focus,
+.modal-content select:focus{
+
+    border-color:#1565C0;
+
+}
+
+
+
+
+
+/* ---------- Modal Buttons ---------- */
+
+
+.modal-buttons{
+
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+
+}
+
+
+
+.save-btn{
+
+    background:#1565C0;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+
+
+.save-btn:hover{
+
+    background:#0d47a1;
+
+}
+
+
+
+
+
+.cancel-btn{
+
+    background:#d32f2f;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+
+
+.cancel-btn:hover{
+
+    background:#b71c1c;
+
+}
+
+
+
+
+
+/* ---------- Responsive ---------- */
+
+
+@media(max-width:900px){
+
+
+    table{
+
+        font-size:14px;
+
+    }
+
+
+    .search-box input{
+
+        width:100%;
+
+    }
+
+
+    .patients-header{
+
+        flex-direction:column;
+        gap:15px;
+        align-items:flex-start;
+
+    }
+
+
+}
+
