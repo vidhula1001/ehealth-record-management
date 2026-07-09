@@ -40,10 +40,11 @@
 .card h2{
     font-size:34px;
     margin-bottom:8px;
+    color: black;
 }
 
 .card p{
-    color:gray;
+    color:black;
 }
 
 /* Activity */
