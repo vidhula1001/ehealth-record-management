@@ -4,10 +4,10 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+app.use("/api/upload", uploadRoutes);
 const patientRoutes = require('./routes/patients');
 const recordRoutes = require('./routes/records');
-
+const uploadRoutes = require("./routes/upload");
 app.use('/api/patients', patientRoutes);
 app.use('/api/records', recordRoutes);
 
