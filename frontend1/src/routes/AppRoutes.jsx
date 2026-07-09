@@ -8,7 +8,7 @@ import Doctors from "../pages/Doctors/Doctors";
 import Appointments from "../pages/Appointments/Appointments";
 import MedicalRecords from "../pages/MedicalRecords/MedicalRecords";
 import Reports from "../pages/Reports/Reports";
-import Profile from "../pages/Profile/Profile";
+import Profile from "../pages/profile/Profile";
 
 function AppRoutes() {
   return (
