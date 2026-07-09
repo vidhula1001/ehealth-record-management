@@ -74,7 +74,39 @@ function MedicalRecords() {
 
   });
 
+   const [file, setFile] = useState(null);
 
+    const handleFileUpload = async () => {
+  if (!file) {
+    alert("Please select a file");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    const response = await fetch(
+      "https://ehealth-backend-harini24.azurewebsites.net/api/upload",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await response.json();
+    console.log(data);
+
+    if (response.ok) {
+      alert("File uploaded successfully!");
+    } else {
+      alert(data.message || "Upload failed");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Upload failed");
+  }
+};
 
 
 
@@ -379,6 +411,20 @@ function MedicalRecords() {
 
 
         </div>
+
+        <div style={{ margin: "20px 0" }}>
+  <input
+    type="file"
+    onChange={(e) => setFile(e.target.files[0])}
+  />
+
+  <button
+    onClick={handleFileUpload}
+    style={{ marginLeft: "10px" }}
+  >
+    Upload File
+  </button>
+</div> 
 
 
 
